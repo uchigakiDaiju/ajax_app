@@ -12,8 +12,9 @@ class PostsController < ApplicationController
   end
 
   def checked
+    # binding.pry #ここまで来ていたので、
     post = Post.find(params[:id])
-    if post.checked  # checkedはカラムで、boolean型。この場合、trueで黒くなっている
+    if post.checked  # checkedはカラムでboolean型。この場合、trueで黒くなっている
       post.update(checked: false) #checked: falseは、白くする
     else
       post.update(checked: true) #checked: trueは黒くする
